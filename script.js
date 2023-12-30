@@ -1,3 +1,4 @@
+window.onload = function() {
 function solve() {
     var A = parseFloat(document.getElementById("A").value);
     var B = parseFloat(document.getElementById("B").value);
@@ -16,10 +17,17 @@ function solve() {
     }
 }
 
-function clearFields() {
+    function clearFields() {
     document.getElementById('A').value = '';
     document.getElementById('B').value = '';
     document.getElementById('C').value = '';
     document.getElementById('sol1').value = '';
+};
+
+
+
+
+
+
     document.getElementById('sol2').value = '';
 }
