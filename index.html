@@ -7,27 +7,23 @@
 </head>
 <body>
     <form>
-        <label>A = </label>
+        <h2>Solve a quadratic equation</h2>
+        <h3>aX<sup>2</sup> + bx + c = 0</h3>
+            
+        <label for="A">A</label>
         <input type="text" id="A">
-        <br>
-        <label>B = </label>
+        <label for="B">B </label>
         <input type="text" id="B">
-        <br>
-        <label>C = </label>
+        <label for="C">C</label>
         <input type="text" id="C">
-        <br>
-        <button type="button" id="solveButton">Solve</button>
-        <button type="button" id="clearButton">Clear</button>
-        <br>
-        <h2>Result:</h2>
+        <button type="button" onclick="solve()">Solve</button>
         <label>X1 = </label>
         <input type="text" id="sol1" readonly>
-        <br>
         <label>X2 = </label>
         <input type="text" id="sol2" readonly>
+        <button class="clear" type="button" onclick="clearFields()">Clear</button>
     </form>
 
-    <script src="/script.js"></script>
 
     <script>
         window.onload = function() {
