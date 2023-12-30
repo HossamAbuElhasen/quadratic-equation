@@ -3,57 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
-
     <title>Quadratic Equation Solver</title>
 </head>
 <body>
     <form>
-        <h2>Solve a quadratic equation</h2>
-        <h3>aX<sup>2</sup> + bx + c = 0</h3>
-            
-        <label for="A">A</label>
+        <label>A = </label>
         <input type="text" id="A">
-        <label for="B">B </label>
+        <br>
+        <label>B = </label>
         <input type="text" id="B">
-        <label for="C">C</label>
+        <br>
+        <label>C = </label>
         <input type="text" id="C">
-        <button type="button" onclick="solve()">Solve</button>
+        <br>
+        <button type="button" id="solveButton">Solve</button>
+        <button type="button" id="clearButton">Clear</button>
+        <br>
+        <h2>Result:</h2>
         <label>X1 = </label>
         <input type="text" id="sol1" readonly>
+        <br>
         <label>X2 = </label>
         <input type="text" id="sol2" readonly>
-        <button class="clear" type="button" onclick="clearFields()">Clear</button>
     </form>
 
+    <script src="/script.js"></script>
+
     <script>
+        window.onload = function() {
+            document.getElementById('solveButton').addEventListener('click', solve);
+            document.getElementById('clearButton').addEventListener('click', clearFields);
+        };
+
         function solve() {
-    var A = parseFloat(document.getElementById("A").value);
-    var B = parseFloat(document.getElementById("B").value);
-    var C = parseFloat(document.getElementById("C").value);
+            var A = parseFloat(document.getElementById("A").value);
+            var B = parseFloat(document.getElementById("B").value);
+            var C = parseFloat(document.getElementById("C").value);
 
-    var x1, x2;
-    x1 = (-B + Math.sqrt(B * B - 4 * A * C)) / (2 * A);
-    x2 = (-B - Math.sqrt(B * B - 4 * A * C)) / (2 * A);
+            var x1, x2;
+            x1 = (-B + Math.sqrt(B * B - 4 * A * C)) / (2 * A);
+            x2 = (-B - Math.sqrt(B * B - 4 * A * C)) / (2 * A);
 
-    if (isNaN(x1) || isNaN(x2)) {
-        document.getElementById("sol1").value = "No real roots";
-        document.getElementById("sol2").value = "No real roots";
-    } else {
-        document.getElementById("sol1").value = x1;
-        document.getElementById("sol2").value = x2;
-    }
-}
+            if (isNaN(x1) || isNaN(x2)) {
+                document.getElementById("sol1").value = "No real roots";
+                document.getElementById("sol2").value = "No real roots";
+            } else {
+                document.getElementById("sol1").value = x1;
+                document.getElementById("sol2").value = x2;
+            }
+        }
 
-function clearFields() {
-    document.getElementById('A').value = '';
-    document.getElementById('B').value = '';
-    document.getElementById('C').value = '';
-    document.getElementById('sol1').value = '';
-    document.getElementById('sol2').value = '';
-}
-
-
+        function clearFields() {
+            document.getElementById('A').value = '';
+            document.getElementById('B').value = '';
+            document.getElementById('C').value = '';
+            document.getElementById('sol1').value = '';
+            document.getElementById('sol2').value = '';
+        }
     </script>
 </body>
 </html>
