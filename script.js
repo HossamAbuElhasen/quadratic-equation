@@ -22,6 +22,9 @@ function solve() {
     document.getElementById('B').value = '';
     document.getElementById('C').value = '';
     document.getElementById('sol1').value = '';
+    document.getElementById('sol2').value = '';
+        }
+
 };
 
 
@@ -29,5 +32,4 @@ function solve() {
 
 
 
-    document.getElementById('sol2').value = '';
-}
+
